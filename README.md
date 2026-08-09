@@ -13,4 +13,5 @@ Em nossa plataforma, o cliente encontra um catálogo completo de serviços — q
 
 O site conta com navegação simples e intuitiva, apresentação institucional da nossa história e valores, além de um formulário direto para contato e informações essenciais como horários de funcionamento, localização e redes sociais. Tudo pensado para que a sua experiência com a Barber House seja impecável, do primeiro clique ao momento na cadeira do barbeiro.
 
-o site terá muitas mudanças e melhorias ao longo do semestre letivo.
+*Este projeto está sendo desenvolvido ao longo do semestre letivo como parte das atividades práticas da disciplina*
+
