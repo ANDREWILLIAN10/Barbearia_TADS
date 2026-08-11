@@ -1,6 +1,6 @@
 # Barber House 
 
-**Autores:** [André Willian], [Jeferson]  
+**Autores:** [André Willian], [Jeferson Oliveira]  
 **Tema:** Barbearia / Estética e Cuidado Masculino  
 
 ---
