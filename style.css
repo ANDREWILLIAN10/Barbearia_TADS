@@ -1,0 +1,935 @@
+/* ========================================
+   CONFIGURAÇÕES GERAIS E VARIÁVEIS
+======================================== */
+
+:root {
+    --primary-gold: #c4ab5b;
+    --bg-dark: #080808;
+    --bg-card: #222222;
+    --bg-section-alt: #181818;
+    --text-light: #ffffff;
+    --text-muted: #dddddd;
+    --border-dark: #333333;
+    --font-display: 'Playfair Display', Georgia, serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+body {
+    font-family: var(--font-display);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* ========================================
+   CABEÇALHO E MENU - PADRÃO TODAS AS PÁGINAS
+======================================== */
+header {
+    width: 100%;
+    height: 125px;
+    background-color: var(--bg-dark);
+    padding: 0 140px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 2px solid var(--primary-gold);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Define larguras iguais nas pontas para manter o menu centralizado */
+.logo-link,
+.header-action {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    justify-content: flex-start;
+}
+
+.header-action {
+    justify-content: flex-end;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%; 
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05); /* Pequena animação de zoom ao passar o mouse */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0; 
+}
+
+nav a {
+    display: block;
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-gold);
+}
+
+.header-socials {
+    gap: 15px;
+}
+
+.header-socials a {
+    color: var(--text-light);
+    font-size: 1.15rem;
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--border-dark);
+    border-radius: 50%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.3s ease;
+}
+
+.header-socials a:hover {
+    color: var(--bg-dark);
+    background-color: var(--primary-gold);
+    border-color: var(--primary-gold);
+    transform: translateY(-2px);
+}
+/* ========================================
+   SEÇÕES GERAIS
+======================================== */
+
+section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary-gold);
+    font-family: var(--font-display);
+    text-transform: uppercase;
+}
+
+section p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    color: var(--text-muted);
+}
+
+
+/* ========================================
+    INÍCIO
+======================================== */
+
+#inicio {
+    min-height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 60px 8%;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+        url("img/fundo.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero-subtitle {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--primary-gold);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.hero-title em {
+    font-style: normal;
+    color: var(--primary-gold);
+}
+
+.hero-description {
+    font-family: var(--font-display);
+    max-width: 650px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 10px auto 35px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    padding: 14px 28px;
+    background-color: var(--primary-gold);
+    color: #111;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 5px;
+
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    padding: 14px 28px;
+    background-color: transparent;
+    color: var(--text-light);
+
+    border: 2px solid var(--primary-gold);
+    border-radius: 5px;
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-gold);
+    color: #111;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   SERVIÇOS
+======================================== */
+
+#servicos {
+    background-color: var(--bg-section-alt);
+    padding: 55px 8%;
+}
+
+#servicos h1 {
+    font-family: var(--font-condensed);
+    font-size: 2.2rem;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.servicos-introducao {
+    max-width: 700px;
+    margin: 0 auto 35px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+
+/* ========================================
+   CARDS DOS SERVIÇOS
+======================================== */
+
+.servicos-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.servico-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    border-radius: 8px;
+
+    padding: 30px 25px;
+    text-align: left;
+
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.servico-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary-gold);
+}
+
+.servico-card h3 {
+    font-family: var(--font-condensed);
+    font-size: 1.4rem;
+    color: var(--primary-gold);
+    margin-bottom: 15px;
+}
+
+.servico-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* ========================================
+   DIFERENCIAIS
+======================================== */
+
+.diferenciais {
+    background-color: var(--bg-dark);
+    padding: 50px 8%;
+}
+
+.diferenciais h2 {
+    margin-bottom: 40px;
+}
+
+.diferenciais-container {
+    max-width: 900px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+
+.diferencial {
+    flex: 1;
+    padding: 5px 30px;
+    background-color: transparent;
+    border: none;
+    border-right: 1px solid var(--border-dark);
+}
+
+.diferencial:last-child {
+    border-right: none;
+}
+
+.diferencial h3 {
+    font-family: var(--font-condensed);
+    font-size: 1.4rem;
+    color: var(--primary-gold);
+    margin-bottom: 12px;
+}
+
+.diferencial p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* ========================================
+   AGENDAMENTO
+======================================== */
+
+.agendamento {
+    background-color: var(--bg-section-alt);
+    padding: 40px 8%;
+    text-align: center;
+}
+
+.agendamento h2 {
+    font-family: var(--font-condensed);
+    font-size: 2rem;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.agendamento p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.agendamento-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE DOS SERVIÇOS
+======================================== */
+
+@media (max-width: 900px) {
+
+    .servicos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .diferenciais-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #servicos,
+    .diferenciais,
+    .agendamento {
+        padding: 40px 5%;
+    }
+
+    .servicos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .diferencial {
+        width: 100%;
+    }
+
+    .agendamento-botoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .agendamento-botoes .btn-primary {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
+}
+
+
+/* ========================================
+   NOSSA HISTÓRIA
+======================================== */
+
+.nossa-historia {
+    background-color: var(--bg-dark);
+    padding: 50px 8%;
+}
+
+.sobre-container {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.sobre-texto {
+    flex: 1;
+    text-align: left;
+}
+
+.sobre-texto h2 {
+    font-family: var(--font-condensed);
+    font-size: 2rem;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.sobre-texto p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin: 0 0 18px;
+}
+
+.sobre-texto p:last-child {
+    margin-bottom: 0;
+}
+
+.sobre-imagem {
+    flex: 1;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+
+/* ========================================
+   MAIS QUE UMA BARBEARIA
+======================================== */
+
+.mais-que-barbearia {
+    background-color: var(--bg-section-alt);
+    padding: 45px 8%;
+}
+
+.mais-que-barbearia h2 {
+    font-family: var(--font-condensed);
+    font-size: 2rem;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.mais-que-barbearia p {
+    max-width: 800px;
+    margin: 0 auto 18px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.mais-que-barbearia p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ========================================
+   MISSÃO, VISÃO E VALORES
+======================================== */
+
+.principios {
+    background-color: var(--bg-dark);
+    padding: 50px 8%;
+}
+
+.principios h2 {
+    font-family: var(--font-condensed);
+    font-size: 2rem;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.principios-container {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.principio {
+    flex: 1;
+
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    border-radius: 8px;
+
+    padding: 30px 25px;
+
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.principio:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary-gold);
+}
+
+.principio h3 {
+    font-family: var(--font-condensed);
+    font-size: 1.6rem;
+    color: var(--primary-gold);
+    margin-bottom: 15px;
+}
+
+.principio p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* ========================================
+   QUEM FAZ A BARBER HOUSE
+======================================== */
+
+.equipe {
+    background-color: var(--bg-section-alt);
+    padding: 50px 8%;
+}
+
+.equipe h2 {
+    font-family: var(--font-condensed);
+    font-size: 2rem;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.equipe > p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.equipe-container {
+    max-width: 900px;
+    margin: 0 auto;
+
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.barbeiro {
+    flex: 1;
+
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-dark);
+    border-radius: 8px;
+
+    padding: 25px;
+
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.barbeiro:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary-gold);
+}
+
+.barbeiro img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.barbeiro h3 {
+    font-family: var(--font-condensed);
+    font-size: 1.6rem;
+    color: var(--primary-gold);
+    margin-bottom: 10px;
+}
+
+.barbeiro p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* ========================================
+   CONTATO
+======================================== */
+
+.contato {
+    background-color: var(--bg-dark);
+    min-height: 70vh;
+    padding-top: 100px;
+}
+
+.contato h2 {
+    margin-bottom: 20px;
+}
+
+.contato-container {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+.informacoes,
+.formulario {
+    flex: 1;
+}
+
+.informacoes h3,
+.formulario h3 {
+    color: var(--primary-gold);
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.informacoes p {
+    margin: 0 0 18px;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.contato-descricao {
+    max-width: 350px;
+    margin: 0 0 25px;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.informacoes .btn-primary {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario label {
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+
+    background-color: var(--bg-card);
+    color: var(--text-light);
+
+    border: 1px solid var(--border-dark);
+    border-radius: 5px;
+
+    font-family: var(--font-main);
+}
+
+.formulario textarea {
+    min-height: 100px;
+}
+
+.formulario input[type="submit"] {
+    background-color: var(--primary-gold);
+    color: #111;
+
+    font-weight: 700;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 14px 28px;
+    margin-top: 5px;
+
+    cursor: pointer;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: var(--text-light);
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+footer {
+    background-color: var(--bg-dark);
+    height: 130px;
+    padding: 0 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    border-top: 2px solid var(--primary-gold);
+}
+
+footer h3 {
+    color: var(--primary-gold);
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+}
+
+footer p {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 768px) {
+
+    header {
+        height: auto;
+        padding: 20px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo-link,
+    .header-action {
+        justify-content: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+  
+
+    #inicio {
+        padding: 50px 5%;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    section {
+        padding: 50px 5%;
+    }
+
+    .nossa-historia {
+        padding: 40px 5%;
+    }
+
+    .sobre-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .sobre-texto {
+        text-align: center;
+    }
+
+    .sobre-imagem {
+        width: 100%;
+    }
+
+    .mais-que-barbearia,
+    .principios,
+    .equipe {
+        padding: 40px 5%;
+    }
+
+    .principios-container {
+        flex-direction: column;
+    }
+
+    .equipe-container {
+        flex-direction: column;
+    }
+
+    .principio,
+    .barbeiro {
+        width: 100%;
+    }
+
+    .contato {
+        padding: 60px 5%;
+    }
+
+    .contato-container {
+        flex-direction: column;
+    }
+
+    .informacoes,
+    .formulario {
+        width: 100%;
+    }
+}
+
+
+/* ========================================
+   WHATSAPP FLUTUANTE
+======================================== */
+
+.whatsapp-flutuante {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 60px;
+    height: 60px;
+    display: block;
+    z-index: 9999;
+
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-flutuante img {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+.whatsapp-flutuante:hover {
+    transform: scale(1.15);
+} 
