@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barber House</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&display=swap">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -91,13 +92,15 @@
                 um momento de cuidado, estilo e confiança.
             </p>
 
-            <p>
+            <p id="textoExtra" style="display: none;">
                 Nosso ambiente foi pensado para que cada cliente se sinta
                 confortável desde o momento em que entra até o final do
                 atendimento. Qualidade, atenção aos detalhes e respeito
                 ao estilo de cada pessoa fazem parte da nossa forma de
                 trabalhar.
             </p>
+
+            <button id="botaoTexto" class="btn-primary" onclick="mostrarTexto()">Saiba mais</button>
 
         </section>
 
@@ -226,6 +229,7 @@
        target="_blank">
         <img src="img/whatsapp.png" alt="WhatsApp">
     </a>
+
 
 </body>
 

@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barber House</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&display=swap">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -60,22 +61,22 @@
 
                     <h3>Dúvidas, parcerias ou algo que não se encaixa nos serviços oferecidos? Escreva que a gente responde.</h3>
 
-                    <form action="#" method="post">
+                    <form id="meuForm">
 
-                        <label>Nome:</label>
-                        <input type="text" name="nome">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" minlength="3" placeholder="Seu nome" required>
 
-                        <label>E-mail:</label>
-                        <input type="email" name="email">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Digite um e-mail válido, como nome@email.com" placeholder="nome@email.com" required>
 
-                        <label>Telefone:</label>
-                        <input type="tel" name="telefone">
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" pattern="\(\d{2}\) \d{4,5}-\d{4}" maxlength="15" title="Digite o telefone com DDD, no formato (42) 99999-9999" placeholder="(42) 99999-9999" required>
 
-                        <label>Assunto:</label>
-                        <input type="text" name="assunto">
+                        <label for="assunto">Assunto:</label>
+                        <input type="text" id="assunto" minlength="3" placeholder="Assunto da mensagem" required>
 
-                        <label>Mensagem:</label>
-                        <textarea name="mensagem"></textarea>
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" minlength="10" placeholder="Escreva sua mensagem" required></textarea>
 
                         <input type="submit" value="ENVIAR">
 

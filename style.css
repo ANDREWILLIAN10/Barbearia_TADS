@@ -1,6 +1,6 @@
-/* ========================================
+/*
    CONFIGURAÇÕES GERAIS E VARIÁVEIS
-======================================== */
+*/
 
 :root {
     --primary-gold: #c4ab5b;
@@ -11,6 +11,8 @@
     --text-muted: #dddddd;
     --border-dark: #333333;
     --font-display: 'Playfair Display', Georgia, serif;
+    --font-condensed: var(--font-display);
+    --font-main: var(--font-display);
 }
 
 * {
@@ -31,9 +33,9 @@ body {
     line-height: 1.6;
 }
 
-/* ========================================
+/*
    CABEÇALHO E MENU - PADRÃO TODAS AS PÁGINAS
-======================================== */
+*/
 header {
     width: 100%;
     height: 125px;
@@ -68,8 +70,8 @@ header {
 }
 
 .logo {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     object-fit: contain;
     border-radius: 50%; 
     transition: transform 0.3s ease;
@@ -138,9 +140,16 @@ nav a:hover {
     border-color: var(--primary-gold);
     transform: translateY(-2px);
 }
-/* ========================================
+/* Telas médias: reduz o espaço lateral do cabeçalho para caber tudo */
+@media (max-width: 1100px) {
+    header {
+        padding: 0 40px;
+    }
+}
+
+/* 
    SEÇÕES GERAIS
-======================================== */
+*/
 
 section {
     padding: 80px 8%;
@@ -162,9 +171,9 @@ section p {
 }
 
 
-/* ========================================
-    INÍCIO
-======================================== */
+/* 
+ INÍCIO
+ */
 
 #inicio {
     min-height: 70vh;
@@ -269,9 +278,9 @@ section p {
 }
 
 
-/* ========================================
+/* 
    SERVIÇOS
-======================================== */
+*/
 
 #servicos {
     background-color: var(--bg-section-alt);
@@ -295,9 +304,9 @@ section p {
 }
 
 
-/* ========================================
+/* 
    CARDS DOS SERVIÇOS
-======================================== */
+ */
 
 .servicos-grid {
     max-width: 1100px;
@@ -339,9 +348,9 @@ section p {
 }
 
 
-/* ========================================
+/* 
    DIFERENCIAIS
-======================================== */
+ */
 
 .diferenciais {
     background-color: var(--bg-dark);
@@ -387,9 +396,9 @@ section p {
 }
 
 
-/* ========================================
+/* 
    AGENDAMENTO
-======================================== */
+ */
 
 .agendamento {
     background-color: var(--bg-section-alt);
@@ -421,53 +430,9 @@ section p {
 }
 
 
-/* ========================================
-   RESPONSIVIDADE DOS SERVIÇOS
-======================================== */
-
-@media (max-width: 900px) {
-
-    .servicos-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .diferenciais-container {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 768px) {
-
-    #servicos,
-    .diferenciais,
-    .agendamento {
-        padding: 40px 5%;
-    }
-
-    .servicos-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .diferencial {
-        width: 100%;
-    }
-
-    .agendamento-botoes {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .agendamento-botoes .btn-primary {
-        width: 100%;
-        max-width: 320px;
-        text-align: center;
-    }
-}
-
-
-/* ========================================
+/* 
    NOSSA HISTÓRIA
-======================================== */
+ */
 
 .nossa-historia {
     background-color: var(--bg-dark);
@@ -519,9 +484,9 @@ section p {
 }
 
 
-/* ========================================
+/* 
    MAIS QUE UMA BARBEARIA
-======================================== */
+*/
 
 .mais-que-barbearia {
     background-color: var(--bg-section-alt);
@@ -549,9 +514,19 @@ section p {
 }
 
 
-/* ========================================
+/* Botão "Saiba mais": usa o visual do .btn-primary (igual aos outros botões do site).
+   Aqui só tiramos a borda padrão do navegador e ajustamos a fonte. */
+#botaoTexto {
+    border: none;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+/* 
    MISSÃO, VISÃO E VALORES
-======================================== */
+*/
 
 .principios {
     background-color: var(--bg-dark);
@@ -606,9 +581,9 @@ section p {
 }
 
 
-/* ========================================
+/* 
    QUEM FAZ A BARBER HOUSE
-======================================== */
+*/
 
 .equipe {
     background-color: var(--bg-section-alt);
@@ -769,6 +744,17 @@ section p {
     min-height: 100px;
 }
 
+.formulario input:focus,
+.formulario textarea:focus {
+    outline: none;
+    border-color: var(--primary-gold);
+}
+
+.formulario input::placeholder,
+.formulario textarea::placeholder {
+    color: #9a9a9a;
+}
+
 .formulario input[type="submit"] {
     background-color: var(--primary-gold);
     color: #111;
@@ -819,92 +805,9 @@ footer p {
 }
 
 
-/* ========================================
-   RESPONSIVIDADE
-======================================== */
-
-@media (max-width: 768px) {
-
-    header {
-        height: auto;
-        padding: 20px 5%;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .logo-link,
-    .header-action {
-        justify-content: center;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-  
-
-    #inicio {
-        padding: 50px 5%;
-    }
-
-    .hero-title {
-        font-size: 2.2rem;
-    }
-
-    section {
-        padding: 50px 5%;
-    }
-
-    .nossa-historia {
-        padding: 40px 5%;
-    }
-
-    .sobre-container {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .sobre-texto {
-        text-align: center;
-    }
-
-    .sobre-imagem {
-        width: 100%;
-    }
-
-    .mais-que-barbearia,
-    .principios,
-    .equipe {
-        padding: 40px 5%;
-    }
-
-    .principios-container {
-        flex-direction: column;
-    }
-
-    .equipe-container {
-        flex-direction: column;
-    }
-
-    .principio,
-    .barbeiro {
-        width: 100%;
-    }
-
-    .contato {
-        padding: 60px 5%;
-    }
-
-    .contato-container {
-        flex-direction: column;
-    }
-
-    .informacoes,
-    .formulario {
-        width: 100%;
-    }
+/* Página de resultado: mantém uma informação por linha */
+#mostrar {
+    white-space: pre-line;
 }
 
 
